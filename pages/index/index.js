@@ -31,6 +31,7 @@ Page({
   onmessage({ detail }) {
     /** @type {{ type:"log"|"request"|"userinfo", params:any,callbackId:string }} */
     const { type, params, callbackId } = detail;
+    console.log(type, params, callbackId);
     if (type === 'log') {
       console.log(params);
     } else if (type === 'userinfo') {
@@ -46,6 +47,8 @@ Page({
       cb(this.webViewContext, callbackId, $chooseImage(params));
     } else if (type === 'showCallMenu') {
       cb(this.webViewContext, callbackId, $showCallMenu(params));
+    } else if (type === 'uploadFile') {
+      cb(this.webViewContext, callbackId, $uploadFile(params));
     }
   }
 });
@@ -71,5 +74,11 @@ function $chooseImage(params) {
 function $showCallMenu(params) {
   return new Promise(function(resolve, reject) {
     dd.showCallMenu({ ...params, success: resolve, fail: reject });
+  });
+}
+
+function $uploadFile(params) {
+  return new Promise(function(resolve, reject) {
+    dd.uploadFile({ ...params, success: resolve, fail: reject });
   });
 }
