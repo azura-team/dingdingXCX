@@ -1,0 +1,10 @@
+{
+  "name": "blank",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "dependencies": {},
+  "scripts": {
+    "dev": "http-server -c-1"
+  }
+}

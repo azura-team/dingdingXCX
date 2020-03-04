@@ -1,0 +1,11 @@
+{
+  "pages": ["pages/index/index"],
+  "window": {
+    "defaultTitle": "My App"
+  },
+  "token": {
+    "appkey": "dingbj2n3pacivkkoeum",
+    "appsecret": "9Bk-Vh2QfaspUzdlZrkKe1J69EYtN5X_O1zqn9ChR2Wt5ItfnE4R40q6uHPgpHSt"
+  },
+  "expires_in": 5400
+}
