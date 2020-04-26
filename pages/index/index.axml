@@ -3,4 +3,4 @@
 <!--  -->
 <web-view id="web-view-1" src="https://zsxtl.azuratech.com:8002/dashboard/" onMessage="onmessage"></web-view>
 
-<!-- <web-view id="web-view-1" src="http://192.168.2.111:30027/dashboard#/" onMessage="onmessage"></web-view> -->
+<!-- <web-view id="web-view-1" src="http://192.168.2.98:30027/dashboard#/" onMessage="onmessage"></web-view> -->

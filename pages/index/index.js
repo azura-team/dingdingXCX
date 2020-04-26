@@ -1,5 +1,5 @@
 /// <reference path="../../dingtalk.d.ts" />
-import { $request,GetDetail } from '../../utils';
+import { $request, GetDetail } from '../../utils';
 
 /** @type {Promise<any>} */
 function cb(context, callbackId, data) {
@@ -25,7 +25,8 @@ function cb(context, callbackId, data) {
   }
 }
 Page({
-  onLoad(e) {
+  onLoad(query) {
+    this.query = query
     this.webViewContext = dd.createWebViewContext('web-view-1');
   },
   onmessage({ detail }) {
@@ -49,6 +50,8 @@ Page({
       cb(this.webViewContext, callbackId, $showCallMenu(params));
     } else if (type === 'uploadFile') {
       cb(this.webViewContext, callbackId, $uploadFile(params));
+    } else if (type === "loaded") {
+      cb(this.webViewContext, callbackId, this.query);
     }
   }
 });
